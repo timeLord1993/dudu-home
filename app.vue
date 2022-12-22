@@ -1,5 +1,7 @@
 <template>
-  <div>123</div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 <script></script>
 <style scoped></style>

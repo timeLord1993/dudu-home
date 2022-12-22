@@ -2,8 +2,10 @@
   <div>123</div>
 </template>
 
-<script setup lang="ts">
-// const appConfig = useAppConfig()
+<script lang="ts" setup>
+definePageMeta({
+  layout: 'cache'
+})
 </script>
 
 <style scoped></style>
