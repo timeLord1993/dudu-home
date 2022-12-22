@@ -1,11 +1,9 @@
 <template>
-
+  <div>123</div>
 </template>
 
 <script setup lang="ts">
-const appConfig = useAppConfig()
+// const appConfig = useAppConfig()
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

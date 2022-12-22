@@ -1,5 +1,5 @@
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+  <div>123</div>
 </template>
+<script></script>
+<style scoped></style>
