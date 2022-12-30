@@ -27,6 +27,7 @@ module.exports = {
     'vue/max-attributes-per-line': 0,
     'no-console': IS_PROD ? 'error' : 'warn',
     'no-debugger': IS_PROD ? 'error' : 'warn',
+    'vue/no-reserved-component-names': 0,
     'prettier/prettier': [
       'warn',
       {
