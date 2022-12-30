@@ -28,6 +28,7 @@ module.exports = {
     'no-console': IS_PROD ? 'error' : 'warn',
     'no-debugger': IS_PROD ? 'error' : 'warn',
     'vue/no-reserved-component-names': 0,
+    'vue/require-v-for-key': 0,
     'prettier/prettier': [
       'warn',
       {
