@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-
 export const useDefaultStore = defineStore('default', {
   state: () => ({
     appInfo: null
@@ -7,5 +6,15 @@ export const useDefaultStore = defineStore('default', {
   getters: {
     appInfo: state => state.appInfo
   },
-  actions: {}
+  actions: {
+    async getUser() {
+      // const data = await $fetch('/api/user', {
+      //   method: 'GET',
+      //   headers: {
+      //     'Content-Type': 'application/json'
+      //   }
+      // })
+      // console.log('getUser data', data)
+    }
+  }
 })

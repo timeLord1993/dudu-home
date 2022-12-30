@@ -1,14 +1,24 @@
 <template>
-  <div>
-    <p>默认布局</p>
+  <div class="container mx-auto max-w-screen-lg min-h-screen">
+    <div class="border-streamer">
+      <Header />
+    </div>
     <slot></slot>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Default'
-}
+<script lang="ts">
+import { defineComponent } from 'vue'
+import Header from '@components/Header.vue'
+export default defineComponent({
+  name: 'Default',
+  components: { Header }
+})
 </script>
+<script setup lang="ts"></script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.border-streamer {
+  border-bottom: 3px solid #ffffff;
+}
+</style>
