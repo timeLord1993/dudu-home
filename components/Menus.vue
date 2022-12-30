@@ -1,25 +1,28 @@
 <template>
   <nav class="menu">
     <ol>
-      <li class="menu-item menu-item__hover"><a href="#0">Blog</a></li>
-      <li class="menu-item menu-item__hover"><a href="#0">About</a></li>
-      <li class="menu-item menu-item__hover">
-        <a href="#0">Widgets</a>
-        <ol class="sub-menu">
-          <li class="menu-item"><a href="#0">Big </a></li>
-          <li class="menu-item"><a href="#0">Bigger </a></li>
-          <li class="menu-item"><a href="#0">Huge </a></li>
-        </ol>
+      <li v-for="item of _store.menusList" class="menu-item menu-item__hover">
+        <template v-if="item.link">
+          <nuxt-link :to="item.link">
+            {{ item.name }}
+          </nuxt-link>
+        </template>
+        <template v-if="hasChildren(item)">
+          <span>{{ item.name }}</span>
+          <ol class="sub-menu">
+            <li v-for="childItem of item.children" class="menu-item">
+              <template v-if="childItem?.link">
+                <nuxt-link :to="childItem.link">
+                  <a :href="childItem.outLink">{{ childItem.name }} </a>
+                </nuxt-link>
+              </template>
+              <template v-else-if="childItem?.outLink">
+                <a :href="childItem.outLink" target="_blank">{{ childItem.name }} </a>
+              </template>
+            </li>
+          </ol>
+        </template>
       </li>
-      <li class="menu-item menu-item__hover">
-        <a href="#0">Kabobs</a>
-        <ol class="sub-menu">
-          <li class="menu-item"><a href="#0">Shishkabobs</a></li>
-          <li class="menu-item"><a href="#0">BBQ kabobs</a></li>
-          <li class="menu-item"><a href="#0">Summer kabobs</a></li>
-        </ol>
-      </li>
-      <li class="menu-item menu-item__hover"><a href="#0">Contact</a></li>
     </ol>
   </nav>
 </template>
@@ -30,6 +33,64 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'Menus'
 })
+</script>
+<script lang="ts" setup>
+import { reactive } from 'vue'
+
+const _store = reactive({
+  menusList: [
+    {
+      name: '主页',
+      link: '/'
+    },
+    {
+      name: '博客',
+      link: '/blog'
+    },
+    {
+      name: '学习',
+      children: [
+        {
+          name: 'vue',
+          link: '/study?type=vue'
+        },
+        {
+          name: 'react',
+          link: '/study?type=react'
+        },
+        {
+          name: 'svelte',
+          link: '/study?type=svelte'
+        }
+      ]
+    },
+    {
+      name: '资源',
+      children: [
+        {
+          name: 'github',
+          outLink: 'https://github.com/'
+        },
+        {
+          name: '知乎',
+          outLink: 'https://www.zhihu.com/'
+        },
+        {
+          name: '掘金',
+          outLink: 'https://juejin.cn/'
+        }
+      ]
+    },
+    {
+      name: '关于',
+      link: '/about'
+    }
+  ]
+})
+
+function hasChildren(data: Record<string, any>): boolean {
+  return data.hasOwnProperty('children') && data.children.length
+}
 </script>
 
 <style scoped lang="scss">
@@ -53,7 +114,7 @@ export default defineComponent({
         border-color: transparent transparent rgba(255, 255, 255, 0.3) transparent;
         backdrop-filter: blur(4px);
         position: absolute;
-        left: 20px;
+        left: 12px;
         top: -10px;
       }
     }
@@ -73,6 +134,7 @@ export default defineComponent({
 }
 .sub-menu > .menu-item {
   font-size: 16px;
+  margin-bottom: 8px;
   &:hover {
     transform: scale(1.15);
     animation: subMenuItemsHover 0.3 ease-in;

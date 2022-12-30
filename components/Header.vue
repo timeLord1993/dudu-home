@@ -7,7 +7,7 @@
       <Menus />
     </div>
     <div class="login-register">
-      <Button text="登陆/注册" />
+      <Button text="登陆/注册" @click="onLogin" />
     </div>
   </div>
 </template>
@@ -21,7 +21,14 @@ export default defineComponent({
   }
 })
 </script>
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useRouter } from '#app'
+
+const router = useRouter()
+function onLogin() {
+  router.push('/login')
+}
+</script>
 
 <style scoped lang="scss">
 .header__wrapper {
@@ -35,6 +42,10 @@ export default defineComponent({
   border-radius: 10px;
   overflow: hidden;
   margin: 10px;
+  &:hover {
+    box-shadow: 0 0 20px 5px $c-09f1a3;
+    animation: avatarHover 1s linear infinite alternate;
+  }
   img {
     width: 100%;
     height: 100%;
@@ -45,5 +56,14 @@ export default defineComponent({
   padding: 10px;
   display: flex;
   align-items: center;
+}
+
+@keyframes avatarHover {
+  from {
+    box-shadow: 0 0 0px 0 transparent;
+  }
+  to {
+    box-shadow: 0 0 20px 5px $c-09f1a3;
+  }
 }
 </style>
