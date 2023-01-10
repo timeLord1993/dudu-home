@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto max-w-screen-lg min-h-screen">
-    <div class="border-streamer">
+    <div class="border-streamer mb-1.5">
       <Header />
     </div>
     <slot></slot>

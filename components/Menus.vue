@@ -51,16 +51,28 @@ const _store = reactive({
       name: '学习',
       children: [
         {
+          name: 'svelte',
+          outLink: 'https://www.sveltejs.cn/'
+        },
+        {
           name: 'vue',
-          link: '/study?type=vue'
+          outLink: 'https://cn.vuejs.org/'
         },
         {
           name: 'react',
-          link: '/study?type=react'
+          outLink: 'https://react.docschina.org/'
         },
         {
-          name: 'svelte',
-          link: '/study?type=svelte'
+          name: 'nextJs',
+          outLink: 'https://www.nextjs.cn/'
+        },
+        {
+          name: 'nuxtJs',
+          outLink: 'https://nuxt.com/'
+        },
+        {
+          name: 'sapperJs',
+          outLink: 'https://www.sapperjs.com/'
         }
       ]
     },

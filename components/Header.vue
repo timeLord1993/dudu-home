@@ -5,6 +5,7 @@
     </div>
     <div class="menus">
       <Menus />
+      <Search />
     </div>
     <div class="login-register">
       <Button text="登陆/注册" @click="onLogin" />
@@ -14,6 +15,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import Menus from './Menus.vue'
+import Search from './Search.vue'
 export default defineComponent({
   name: 'Header',
   components: {
@@ -56,6 +58,7 @@ function onLogin() {
   padding: 10px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 @keyframes avatarHover {
