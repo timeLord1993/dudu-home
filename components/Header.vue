@@ -1,7 +1,7 @@
 <template>
   <div class="header__wrapper">
     <div class="avatar">
-      <img src="~@images/avatar.jpeg" alt="头像" srcset="" />
+      <img src="~@images/logo.png" alt="头像" srcset="" />
     </div>
     <div class="menus">
       <Menus />

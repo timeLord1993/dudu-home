@@ -11,8 +11,15 @@ export default defineNuxtConfig({
     head: {
       charset: "utf-16",
       viewport: "width=500, initial-scale=1",
-      title: "Home",
-      meta: [{ name: "description", content: "家园网" }]
+      title: "Time Lord",
+      meta: [{ name: "description", content: "时间领主" }],
+      link: [
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "./images/favicon.ico"
+        }
+      ]
     }
   },
   modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"],
