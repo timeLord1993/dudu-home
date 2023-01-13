@@ -7,8 +7,8 @@
 
 <script>
 export default {
-  name: 'Cache'
-}
+  name: "Cache"
+};
 </script>
 
 <style scoped></style>

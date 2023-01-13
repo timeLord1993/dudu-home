@@ -1,5 +1,5 @@
-import { defineStore } from 'pinia'
-export const useDefaultStore = defineStore('default', {
+import { defineStore } from "pinia";
+export const useDefaultStore = defineStore("default", {
   state: () => ({
     appInfo: null
   }),
@@ -17,4 +17,4 @@ export const useDefaultStore = defineStore('default', {
       // console.log('getUser data', data)
     }
   }
-})
+});

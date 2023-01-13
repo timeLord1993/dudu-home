@@ -3,15 +3,15 @@
 </template>
 
 <script lang="ts" setup>
-import { useDefaultStore } from '~/store'
-import { useRoute } from '#app'
+import { useDefaultStore } from "~/store";
+import { useRoute } from "#app";
 
 definePageMeta({
-  layout: 'default'
-})
-const route = useRoute()
-const defaultStore = useDefaultStore()
-const userInfo = await defaultStore.getUser()
+  layout: "default"
+});
+const route = useRoute();
+const defaultStore = useDefaultStore();
+const userInfo = await defaultStore.getUser();
 </script>
 
 <style scoped></style>
