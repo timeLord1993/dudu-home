@@ -13,22 +13,21 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
-import Menus from './Menus.vue'
-import Search from './Search.vue'
+import { defineComponent } from "vue";
+
 export default defineComponent({
-  name: 'Header',
-  components: {
-    Menus
-  }
-})
+  name: "Header"
+});
 </script>
 <script lang="ts" setup>
-import { useRouter } from '#app'
+import { useRouter } from "#app";
+import Menus from "./Menus.vue";
+import Search from "./Search.vue";
+import Button from "./Button.vue";
 
-const router = useRouter()
+const router = useRouter();
 function onLogin() {
-  router.push('/login')
+  router.push("/login");
 }
 </script>
 

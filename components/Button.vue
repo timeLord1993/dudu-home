@@ -5,18 +5,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 export default defineComponent({
-  name: 'Button'
-})
+  name: "Button"
+});
 </script>
 <script setup lang="ts">
 const props = defineProps({
   text: {
     type: String,
-    default: '按钮'
+    default: "按钮"
   }
-})
+});
 </script>
 
 <style scoped lang="scss">
@@ -26,7 +26,7 @@ const props = defineProps({
   color: #fff;
   border-radius: 5px;
   padding: 10px 25px;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 500;
   background: transparent;
   cursor: pointer;
@@ -35,6 +35,9 @@ const props = defineProps({
   display: inline-block;
   box-shadow: inset 2px 2px 2px 0 rgba(255, 255, 255, 0.5), 7px 7px 20px 0 rgba(0, 0, 0, 0.1), 4px 4px 5px 0 rgba(0, 0, 0, 0.1);
   outline: none;
+  span: {
+    user-select: none;
+  }
 }
 /* 7 */
 .btn-7 {
@@ -52,7 +55,7 @@ const props = defineProps({
 .btn-7:before,
 .btn-7:after {
   position: absolute;
-  content: '';
+  content: "";
   right: 0;
   bottom: 0;
   background: $c-09f1a3;
@@ -82,7 +85,7 @@ const props = defineProps({
 .btn-7 span:before,
 .btn-7 span:after {
   position: absolute;
-  content: '';
+  content: "";
   left: 0;
   top: 0;
   background: $c-09f1a3;

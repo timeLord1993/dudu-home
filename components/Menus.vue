@@ -28,80 +28,94 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'Menus'
-})
+  name: "Menus"
+});
 </script>
 <script lang="ts" setup>
-import { reactive } from 'vue'
+import { reactive } from "vue";
 
-const _store = reactive({
+type MenusType = {
+  name: string;
+  link?: string;
+  children?: MenuItemType[];
+};
+type MenuItemType = {
+  name: string;
+  link?: string;
+  outLink?: string;
+};
+type MenuStoreType = {
+  menusList?: MenusType[];
+};
+
+const _store = reactive<MenuStoreType>({
   menusList: [
     {
-      name: '主页',
-      link: '/'
+      name: "主页",
+      link: "/"
     },
     {
-      name: '博客',
-      link: '/blog'
+      name: "博客",
+      link: "/blog"
     },
     {
-      name: '学习',
+      name: "学习",
       children: [
         {
-          name: 'svelte',
-          outLink: 'https://www.sveltejs.cn/'
+          name: "svelte",
+          outLink: "https://www.sveltejs.cn/"
         },
         {
-          name: 'vue',
-          outLink: 'https://cn.vuejs.org/'
+          name: "vue",
+          outLink: "https://cn.vuejs.org/"
         },
         {
-          name: 'react',
-          outLink: 'https://react.docschina.org/'
+          name: "react",
+          outLink: "https://react.docschina.org/"
         },
         {
-          name: 'nextJs',
-          outLink: 'https://www.nextjs.cn/'
+          name: "nextJs",
+          outLink: "https://www.nextjs.cn/"
         },
         {
-          name: 'nuxtJs',
-          outLink: 'https://nuxt.com/'
+          name: "nuxtJs",
+          outLink: "https://nuxt.com/"
         },
         {
-          name: 'sapperJs',
-          outLink: 'https://www.sapperjs.com/'
+          name: "sapperJs",
+          outLink: "https://www.sapperjs.com/"
         }
       ]
     },
     {
-      name: '资源',
+      name: "资源",
       children: [
         {
-          name: 'github',
-          outLink: 'https://github.com/'
+          name: "github",
+          outLink: "https://github.com/"
         },
         {
-          name: '知乎',
-          outLink: 'https://www.zhihu.com/'
+          name: "知乎",
+          outLink: "https://www.zhihu.com/"
         },
         {
-          name: '掘金',
-          outLink: 'https://juejin.cn/'
+          name: "掘金",
+          outLink: "https://juejin.cn/"
         }
       ]
     },
     {
-      name: '关于',
-      link: '/about'
+      name: "关于",
+      link: "/about"
     }
   ]
-})
+});
 
 function hasChildren(data: Record<string, any>): boolean {
-  return data.hasOwnProperty('children') && data.children.length
+  return data.hasOwnProperty("children") && data.children.length;
 }
 </script>
 
@@ -117,7 +131,7 @@ function hasChildren(data: Record<string, any>): boolean {
       width: auto;
       position: absolute;
       &::before {
-        content: '';
+        content: "";
         display: block;
         height: 0;
         width: 0;
