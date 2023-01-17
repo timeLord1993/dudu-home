@@ -130,6 +130,7 @@ function hasChildren(data: Record<string, any>): boolean {
       display: none;
       width: auto;
       position: absolute;
+      z-index: 999;
       &::before {
         content: "";
         display: block;
