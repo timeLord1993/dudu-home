@@ -40,7 +40,7 @@ function onSearch() {
     background: transparent;
     border: none;
     outline: none;
-    text-indent: 15px;
+    text-indent: 5px;
     font-size: 18px;
   }
 }

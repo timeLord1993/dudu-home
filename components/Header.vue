@@ -1,14 +1,11 @@
 <template>
   <div class="header__wrapper">
-    <div class="avatar">
+    <div class="avatar" @click="onLogin">
       <img src="~@images/logo.png" alt="头像" srcset="" />
     </div>
     <div class="menus">
       <Menus />
       <Search />
-    </div>
-    <div class="login-register">
-      <Button text="登陆/注册" @click="onLogin" />
     </div>
   </div>
   <n-modal v-model:show="showLoginModal">
@@ -55,7 +52,6 @@ import { NModal, NCard, NForm, NFormItem, NInput, NButton, NSpace, NIcon } from 
 import { LogIn, CloseCircleOutline } from "@vicons/ionicons5";
 import Menus from "./Menus.vue";
 import Search from "./Search.vue";
-import Button from "./Button.vue";
 
 const showLoginModal = ref(false);
 function onLogin() {
@@ -93,9 +89,9 @@ const { model, rules } = reactive({
   justify-content: space-between;
 }
 .avatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 10px;
+  width: 54px;
+  height: 54px;
+  border-radius: 15px;
   overflow: hidden;
   margin: 10px;
   &:hover {

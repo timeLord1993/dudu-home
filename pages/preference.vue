@@ -20,4 +20,8 @@ definePageMeta({
 });
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.custom-pane-style {
+  background: red;
+}
+</style>

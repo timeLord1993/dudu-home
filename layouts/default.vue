@@ -19,6 +19,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .border-streamer {
-  border-bottom: 3px solid $c-ffffff;
+  border-bottom: 1px solid $c-ffffff;
+  margin-bottom: 10px;
 }
 </style>

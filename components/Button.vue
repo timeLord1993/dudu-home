@@ -41,7 +41,7 @@ const props = defineProps({
 }
 /* 7 */
 .btn-7 {
-  background: linear-gradient(120deg, #000044, #005e6e);
+  background: linear-gradient(120deg, #3227c7, #1703f2);
   line-height: 42px;
   padding: 0;
   border: none;
