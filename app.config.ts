@@ -1,9 +1,6 @@
 export default defineAppConfig({
-  title: "家园",
+  title: "time lord",
   theme: {
-    dark: true,
-    colors: {
-      primary: "#ff0000"
-    }
+    dark: true
   }
 });

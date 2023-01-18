@@ -15,7 +15,7 @@ export default defineComponent({
   setup() {
     const darkThemeOverrides = {
       common: {
-        primaryColor: "#01082F"
+        // primaryColor: "#01082F" // 设置主题颜色
       }
     };
     return {
