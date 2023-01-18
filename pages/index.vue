@@ -10,7 +10,10 @@
 import { NList } from "naive-ui";
 import ListItem from "@components/ListItem.vue";
 definePageMeta({
-  layout: "default"
+  layout: "default",
+  pageTransition: {
+    name: "rotate"
+  }
 });
 </script>
 

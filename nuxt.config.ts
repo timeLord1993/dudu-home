@@ -20,7 +20,8 @@ export default defineNuxtConfig({
           href: "./images/favicon.ico"
         }
       ]
-    }
+    },
+    pageTransition: { name: "page", mode: "out-in" }
   },
   modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"],
   build: {

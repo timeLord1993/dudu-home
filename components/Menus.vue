@@ -1,7 +1,7 @@
 <template>
   <nav class="menu">
     <ol>
-      <li v-for="item of _store.menusList" class="menu-item menu-item__hover">
+      <li v-for="item of _store.menusList" class="menu-item menu-item__hover" :class="[currentRoute === item.link && 'menu-item__active']">
         <template v-if="item.link">
           <nuxt-link :to="item.link">
             {{ item.name }}
@@ -58,11 +58,11 @@ const _store = reactive<MenuStoreType>({
       link: "/"
     },
     {
-      name: "博客",
-      link: "/blog"
+      name: "优选",
+      link: "/preference"
     },
     {
-      name: "学习",
+      name: "官方网站",
       children: [
         {
           name: "svelte",
@@ -91,7 +91,7 @@ const _store = reactive<MenuStoreType>({
       ]
     },
     {
-      name: "资源",
+      name: "学习社区",
       children: [
         {
           name: "github",
@@ -106,10 +106,6 @@ const _store = reactive<MenuStoreType>({
           outLink: "https://juejin.cn/"
         }
       ]
-    },
-    {
-      name: "关于",
-      link: "/about"
     }
   ]
 });
@@ -117,6 +113,18 @@ const _store = reactive<MenuStoreType>({
 function hasChildren(data: Record<string, any>): boolean {
   return data.hasOwnProperty("children") && data.children.length;
 }
+
+const route = useRoute();
+const currentRoute = ref<string>("/");
+watch(
+  () => route.path,
+  (path: string) => {
+    currentRoute.value = path;
+  },
+  {
+    immediate: true
+  }
+);
 </script>
 
 <style scoped lang="scss">
@@ -170,6 +178,10 @@ function hasChildren(data: Record<string, any>): boolean {
 
 .menu-item__hover:hover > a {
   animation: menuItemHover 0.3s linear;
+  color: $c-09f1a3;
+  text-shadow: $c-09f1a3 1.5px 1.5px 3px;
+}
+.menu-item__active {
   color: $c-09f1a3;
   text-shadow: $c-09f1a3 1.5px 1.5px 3px;
 }
